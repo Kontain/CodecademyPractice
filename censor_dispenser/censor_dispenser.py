@@ -70,6 +70,8 @@ def censorFromText(text):
 				if neg != neg_stored[0]:
 					#print(text_split[word])
 					text_split[word] = "*" * len(text_split[word])
+					text_split[word - 1] = "*" * len(text_split[word - 1])
+					text_split[word + 1] = "*" * len(text_split[word + 1])
 					#print(text_split[word])
 	#print(neg_stored)
 	#print(len(neg_stored))
@@ -95,7 +97,9 @@ def censorFromText(text):
 							#print(i)
 							#print(text_split[word + i])
 						text_split[word + i] = "*" * len(text_split[word + i])
+						text_split[word + i - 1] = "*" * len(text_split[word + i - 1])
+						text_split[word + i + 1] = "*" * len(text_split[word + i + 1])
 
 	print(" ".join(text_split))
 
-censorFromText(email_three)
+censorFromText(email_four)
