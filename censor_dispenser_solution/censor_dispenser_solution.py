@@ -36,8 +36,11 @@ def censor_three(input_text, censored_list, negative_words):
   input_text_words = []
   for x in input_text.split(" "):
     x1 = x.split("\n")
+    #print(x)
     for word in x1:
       input_text_words.append(word)
+      #print(word)
+  print(input_text_words)
   for i in range(0,len(input_text_words)):
     if (input_text_words[i] in censored_list) == True:
       word_clean = input_text_words[i]
@@ -59,7 +62,7 @@ def censor_three(input_text, censored_list, negative_words):
           input_text_words[i] = input_text_words[i].replace(word_clean, censored_word)
   return " ".join(input_text_words)
 
-# print(censor_three(email_three, proprietary_terms, negative_words))
+#print(censor_three(email_three, proprietary_terms, negative_words))
 
 punctuation = [",", "!", "?", ".", "%", "/", "(", ")"]
 
@@ -69,6 +72,7 @@ def censor_four(input_text, censored_list):
     x1 = x.split("\n")
     for word in x1:
       input_text_words.append(word)
+  
   for i in range(0,len(input_text_words)):
     checked_word = input_text_words[i].lower()
     for x in punctuation:
